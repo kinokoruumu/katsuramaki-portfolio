@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>PortFolio | makki</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="anim-container fixed">
+        <div class="left-and-right">
+            <div class="left-and-right-left"></div>
+            <div class="left-and-right-right"></div>
+        </div>
+        <div class="up-and-down">
+            <div class="up-and-down-top"></div>
+            <div class="up-and-down-bottom"></div>
+        </div>
+    </div>
+
+    <div class="main-container"></div>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script>
+        (function($){
+            var $win = $(window)
+            var scroll = $win.scrollTop()
+            var top = 0
+            var bottom = 0
+            var rotate = 0
+            $win.on('load scroll', function () {
+                scroll = $win.scrollTop()
+                top = (scroll*4)*-1
+                bottom = (scroll*4)
+                rotate = 20+Math.floor(scroll*0.2)*-1
+                scroll -= 50
+                right = (scroll*5)
+                left = (scroll*5)*-1
+                if(scroll < $win.height()/2){
+                    upAndDownAnim(top, bottom)
+                }
+                // if(scroll < ($win.height()/2)){
+                    leftAndRightAnim(left, right, rotate)
+                // }
+                console.log(scroll)
+            })
+
+            function upAndDownAnim(top, bottom){
+                $('.up-and-down-top').css({
+                    top: 'calc(-50% + '+top+'px)'
+                })
+                $('.up-and-down-bottom').css({
+                    bottom: 'calc(-50% - '+bottom+'px)'
+                })
+            }
+
+            function leftAndRightAnim(left, right, rotate){
+                $('.left-and-right-left').css({
+                    left: 'calc(-50% + '+left+'px)',
+                    transform: 'translateY(-50%) rotate('+rotate+'deg)'
+                })
+                $('.left-and-right-right').css({
+                    right: 'calc(-50% - '+right+'px)',
+                    transform: 'translateY(-50%) rotate('+rotate+'deg)'
+                })
+            }
+        })(jQuery)
+    </script>
+</body>
+</html>
