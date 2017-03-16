@@ -1,3 +1,9 @@
+@charset 'utf-8';
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../font/Montserrat-Regular.ttf);
+}
+
 body,
 html {
     width: 100%;
@@ -14,6 +20,9 @@ html {
 .fixed {
     position: fixed !important;
 }
+.hidden {
+    display: none;
+}
 
 .anim-container {
     position: absolute;
@@ -21,6 +30,10 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 9999;
+}
+.color-text {
+    color: #D8042C;
 }
 
 .up-and-down {
@@ -39,7 +52,18 @@ html {
     height: 100%;
     transform: translateX(-50%) rotate(-20deg);
     transform-origin: bottom center;
-    background-color: #000;
+    background-color: #fff;
+    border-bottom: 1rem solid #D8042C;
+}
+.title {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    font-size: 3rem;
+    font-weight: normal;
+    transform: translateX(-50%);
+    letter-spacing: 0.1rem;
+    vertical-align: bottom;
 }
 .up-and-down-bottom {
     position: absolute;
@@ -49,7 +73,25 @@ html {
     height: 100%;
     transform: translateX(-50%) rotate(-20deg);
     transform-origin: top center;
-    background-color: #888;
+    background-color: #fff;
+    border-top: 1rem solid rgba(0,0,0,0.87);
+}
+.sub-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    font-size: 3rem;
+    font-weight: normal;
+    transform: translateX(-50%);
+    letter-spacing: 0.5rem;
+}
+
+.left-and-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .left-and-right-left {
@@ -60,7 +102,7 @@ html {
     height: 200%;
     transform: translateY(-50%) rotate(20deg);
     transform-origin: center right;
-    background-color: #333;
+    background-color: #BBD3E6;
 }
 .left-and-right-right {
     position: absolute;
@@ -70,11 +112,172 @@ html {
     height: 200%;
     transform: translateY(-50%) rotate(20deg);
     transform-origin: center left;
-    background-color: #555;
+    background-color: #51546D;
 }
 
 
 .main-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 3rem;
+    font-family: 'Montserrat';
+    border: 0.5rem solid rgba(0,0,0,0.87);
+    padding: 4rem;
+}
+
+.main-content-container {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 300%;
+    overflow: scroll;
 }
+.main-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+.content-title {
+    position: relative;
+    top: 0;
+    left: 50%;
+    width: 60%;
+    min-width: 980px;
+    color: #34495e;
+    line-height: 1;
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: 0.5rem;
+    transform: translateX(-50%);
+}
+
+.content-title:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 100%;
+    border-bottom: 1px solid #34495e;
+}
+.content-title > span {
+    position:relative;
+    display:inline-block;
+    background:#fff;
+    z-index:100;
+}
+
+.profile {
+    margin-top: 5rem;
+}
+.profile-icon {
+    width: 20%;
+    min-width: 200px;
+    margin: 2rem auto 0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile-icon img {
+    display: block;
+    width: 100%;
+}
+
+.profile-detail {
+    width: 70%;
+    margin: 0 auto;
+}
+.profile-detail-title {
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(0,0,0,0.87);
+}
+.profile-detail-content {
+    padding: 0 2rem;
+}
+.profile-name {
+    font-size: 2rem;
+    text-align: center;
+}
+.phoneme {
+    margin-left: 2rem;
+    font-size: 1.5rem;
+}
+
+.profile-introduction {
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 1rem;
+}
+.profile-introduction-paragraph {
+    padding: 0.5rem;
+}
+
+.profile-part-time-job li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem 0;
+}
+.part-time-job-date {
+    color: #888;
+}
+
+.portfolio-container {
+    padding-top: 4rem;
+}
+.portfolio-container ul {
+    padding-top: 2rem;
+}
+
+.graph-container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+
+@media screen and (min-width:961px) {
+/*pc用のcssを記述*/
+    .portfolio-content {
+        width: 33.333%;
+        height: 300px;
+        list-style: none;
+        background-color: #999;
+    }
+}
+  
+@media only screen and (min-width:376px) and (max-width:960px) {
+/*tablet用のcssを記述*/
+    .portfolio-content {
+        width: 50%;
+        height: 300px;
+        list-style: none;
+        background-color: #999;
+    }
+}
+ 
+@media screen and (max-width:375px) {
+/*スマホ用のcssを記述*/
+    .portfolio-content {
+        width: 100%;
+        height: 300px;
+        list-style: none;
+        background-color: #999;
+    }
+}
+
+
