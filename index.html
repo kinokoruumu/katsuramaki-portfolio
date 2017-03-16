@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>PortFolio | makki</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,57 +13,128 @@
             <div class="left-and-right-right"></div>
         </div>
         <div class="up-and-down">
-            <div class="up-and-down-top"></div>
-            <div class="up-and-down-bottom"></div>
+            <div class="up-and-down-top">
+                <h1 class="title">
+                    Taiki <span class="color-text">K</span>atsuramaki
+                </h1>
+            </div>
+            <div class="up-and-down-bottom">
+                <p class="sub-title">
+                    <span class="color-text">P</span>ortFolio
+                </p>
+            </div>
         </div>
     </div>
 
-    <div class="main-container"></div>
+    <div class="main-container">
+        <div class="main-message hidden">
+            Hi, I'm Taiki.<br>
+            I build web applications.
+        </div>
+        <div class="main-content-container">
+            <div class="main-content">
+                <div class="profile">
+                    <h2 class="profile-title content-title"><span>Profile</span></h2>
+                    <div class="profile-content">
+                        <div class="profile-icon">
+                            <img src="images/icon/profile-icon.jpeg" alt="プロフィールアイコン">
+                        </div>
+                        <div class="profile-detail">
+                            <p class="profile-name">
+                                葛巻 大樹<span class="phoneme">Katsuramaki Taiki</span>
+                            </p>
+                            <div class="profile-introduction">
+                                <p class="profile-introduction-paragraph">
+                                    主に制御系エンジニアですが。<br>
+                                    制御とインターネットやユーザーと繋げるようなお仕事がしたいです！
+                                </p>
+                                <p class="profile-introduction-paragraph">
+                                    また最新技術で人を楽しませるような仕事もしたいです！
+                                </p>
+                            </div>
+                            <div class="profile-part-time-job">
+                                <p class="profile-detail-title">バイト歴</p>
+                                <ul class="profile-detail-content">
+                                    <li>ユニロボット株式会社<span class="part-time-job-date">2016-04</span></li>
+                                    <li>ユニロボット株式会社<span class="part-time-job-date">2016-04</span></li>
+                                    <li>ユニロボット株式会社<span class="part-time-job-date">2016-04</span></li>
+                                </ul>
+                            </div>
+                            <div class="profile-skill">
+                                <p class="profile-detail-title">
+                                    スキル
+                                </p>
+                                <div class="graph-container profile-detail-content">
+                                    <canvas id="myChart"></canvas>
+                                </div>
+                                
+                            </div>
+                            <div class="profile-sns-account">
+                                <ul>
+                                    <li>Twitter</li>
+                                    <li>FaceBook</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-container">
+                    <h2 class="portfolio-title content-title"><span>Portfolio</span></h2>
+                    <ul>
+                        <li class="portfolio-content">コンテンツ</li>
+                        <li class="portfolio-content">コンテンツ</li>
+                        <li class="portfolio-content">コンテンツ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/lib/jquery-1.9.1.min.js"></script>
+    <script src="js/lib/imagesloaded.pkgd.min.js"></script>
+    <script src="js/lib/masonry.pkgd.min.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script>
         (function($){
-            var $win = $(window)
-            var scroll = $win.scrollTop()
-            var top = 0
-            var bottom = 0
-            var rotate = 0
-            $win.on('load scroll', function () {
-                scroll = $win.scrollTop()
-                top = (scroll*4)*-1
-                bottom = (scroll*4)
-                rotate = 20+Math.floor(scroll*0.2)*-1
-                scroll -= 50
-                right = (scroll*5)
-                left = (scroll*5)*-1
-                if(scroll < $win.height()/2){
-                    upAndDownAnim(top, bottom)
+            var $container = $('.portfolio-container ul');
+            $container.imagesLoaded(function(){
+                $container.masonry({
+                    itemSelector: '.portfolio-content',
+                    isFitWidth: false
+                });
+            });
+
+            var ctx = $('#myChart')
+
+            var myRadarChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ["デザイン", "オリジナリティ", "コンテンツ", "アクセサビリティ", "写真", "文章力", "ブランド"],
+                    datasets: [
+                        {
+                            //凡例
+                            label: "A社",
+                            //背景色
+                            backgroundColor: "rgba(187,211,230,0.2)",
+                            //枠線の色
+                            borderColor: "rgba(179,181,198,1)",
+                            //結合点の背景色
+                            pointBackgroundColor: "rgba(179,181,198,1)",
+                            //結合点の枠線の色
+                            pointBorderColor: "#fff",
+                            //結合点の背景色（ホバーしたとき）
+                            pointHoverBackgroundColor: "#fff",
+                            //結合点の枠線の色（ホバーしたとき）
+                            pointHoverBorderColor: "rgba(179,181,198,1)",
+                            //結合点より外でマウスホバーを認識する範囲（ピクセル単位）
+                            hitRadius: 5,
+                            //グラフのデータ
+                            data: [65, 59, 90, 81, 56, 55, 40]
+                        }
+                    ]
                 }
-                // if(scroll < ($win.height()/2)){
-                    leftAndRightAnim(left, right, rotate)
-                // }
-                console.log(scroll)
             })
-
-            function upAndDownAnim(top, bottom){
-                $('.up-and-down-top').css({
-                    top: 'calc(-50% + '+top+'px)'
-                })
-                $('.up-and-down-bottom').css({
-                    bottom: 'calc(-50% - '+bottom+'px)'
-                })
-            }
-
-            function leftAndRightAnim(left, right, rotate){
-                $('.left-and-right-left').css({
-                    left: 'calc(-50% + '+left+'px)',
-                    transform: 'translateY(-50%) rotate('+rotate+'deg)'
-                })
-                $('.left-and-right-right').css({
-                    right: 'calc(-50% - '+right+'px)',
-                    transform: 'translateY(-50%) rotate('+rotate+'deg)'
-                })
-            }
         })(jQuery)
     </script>
 </body>
