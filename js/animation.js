@@ -20,7 +20,6 @@
         upAndDownAnim(top, bottom)
         leftAndRightAnim(left, right, rotate)
         titleAnim(top)
-        console.log(scroll, $win.height()/4)
 
         var $animSelector = $('.main-message')
         var $contentSelector = $('.main-content')

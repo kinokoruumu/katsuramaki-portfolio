@@ -24,6 +24,10 @@ html {
     display: none;
 }
 
+:root {
+    --main-color: #D8042C;
+}
+
 .anim-container {
     position: absolute;
     top: 0;
@@ -33,7 +37,8 @@ html {
     z-index: 9999;
 }
 .color-text {
-    color: #D8042C;
+    /*color: #D8042C;*/
+    color: var(--main-color);
 }
 
 .up-and-down {
@@ -151,38 +156,42 @@ html {
     width: 100%;
     background-color: #fff;
 }
-
 .content-title {
-    position: relative;
-    top: 0;
-    left: 50%;
-    width: 60%;
-    min-width: 980px;
-    color: #34495e;
-    line-height: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center; /* for no-flexbox browsers */
+
     font-size: 2rem;
     font-weight: normal;
     letter-spacing: 0.5rem;
-    transform: translateX(-50%);
+    text-align: center;
 }
-
-.content-title:before {
+.content-title:before,
+.content-title:after {
+    border-top: 2px solid;
     content: "";
-    position: absolute;
-    left: 0;
-    bottom: 2px;
-    width: 100%;
-    border-bottom: 1px solid #34495e;
+    display: inline; /* for IE */
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex: 1;
+    flex-grow: 1;
 }
-.content-title > span {
-    position:relative;
-    display:inline-block;
-    background:#fff;
-    z-index:100;
+.content-title:before {
+    margin-right: 0.5em;
+}
+.content-title:after {
+    margin-left: 0.5em;
 }
 
 .profile {
     margin-top: 5rem;
+    /*background: linear-gradient(90deg, #fff 50%,#ffc0cb 50%);*/
 }
 .profile-icon {
     width: 20%;
@@ -218,6 +227,11 @@ html {
     font-size: 1.5rem;
 }
 
+.graph-container {
+    width: 60%;
+    margin: 0 auto;
+}
+
 .profile-introduction {
     padding: 1rem 0;
     text-align: center;
@@ -239,45 +253,31 @@ html {
 .portfolio-container {
     padding-top: 4rem;
 }
-.portfolio-container ul {
+.portfolio-container > ul {
     padding-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.graph-container {
-    width: 60%;
-    margin: 0 auto;
+.portfolio-content {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 33.333%;
+    height: 25vw;
+    background-color: #888;
+    list-style: none;
 }
-
-
-
-@media screen and (min-width:961px) {
-/*pc用のcssを記述*/
-    .portfolio-content {
-        width: 33.333%;
-        height: 300px;
-        list-style: none;
-        background-color: #999;
-    }
+.portfolio-content-img {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    filter: grayscale(100%);
+    transition: filter 0.5s;
 }
-  
-@media only screen and (min-width:376px) and (max-width:960px) {
-/*tablet用のcssを記述*/
-    .portfolio-content {
-        width: 50%;
-        height: 300px;
-        list-style: none;
-        background-color: #999;
-    }
-}
- 
-@media screen and (max-width:375px) {
-/*スマホ用のcssを記述*/
-    .portfolio-content {
-        width: 100%;
-        height: 300px;
-        list-style: none;
-        background-color: #999;
-    }
+.portfolio-content-img img {
+    display: inline-block;
+    height: 100%;
 }
 
 

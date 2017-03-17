@@ -34,7 +34,7 @@
         <div class="main-content-container">
             <div class="main-content">
                 <div class="profile">
-                    <h2 class="profile-title content-title"><span>Profile</span></h2>
+                    <h2 class="profile-title content-title"><span>Profile</span><span class="phoneme">プロフィール</span></h2>
                     <div class="profile-content">
                         <div class="profile-icon">
                             <img src="images/icon/profile-icon.jpeg" alt="プロフィールアイコン">
@@ -79,11 +79,32 @@
                     </div>
                 </div>
                 <div class="portfolio-container">
-                    <h2 class="portfolio-title content-title"><span>Portfolio</span></h2>
+                    <h2 class="portfolio-title content-title"><span>Portfolio</span><span class="phoneme">ポートフォリオ</span></h2>
                     <ul>
-                        <li class="portfolio-content">コンテンツ</li>
-                        <li class="portfolio-content">コンテンツ</li>
-                        <li class="portfolio-content">コンテンツ</li>
+                        <li class="portfolio-content">
+                            <div class="portfolio-content-img">
+                                <img src="images/portfolio-content/web-radio-control1.jpeg" alt="">
+                            </div>
+                            <div class="portfolio-content-title hidden">
+                                次世代ラジコン
+                            </div>
+                        </li>
+                        <li class="portfolio-content">
+                            <div class="portfolio-content-img">
+                                <img src="images/portfolio-content/web-radio-control2.jpeg" alt="">
+                            </div>
+                            <div class="portfolio-content-title hidden">
+                                次世代ラジコン
+                            </div>
+                        </li>
+                        <li class="portfolio-content">
+                            <div class="portfolio-content-img">
+                                <img src="images/portfolio-content/web-radio-control1.jpeg" alt="">
+                            </div>
+                            <div class="portfolio-content-title hidden">
+                                次世代ラジコン
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -91,50 +112,23 @@
     </div>
 
     <script src="js/lib/jquery-1.9.1.min.js"></script>
-    <script src="js/lib/imagesloaded.pkgd.min.js"></script>
-    <script src="js/lib/masonry.pkgd.min.js"></script>
     <script src="js/animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="js/chartSetting.js"></script>
     <script>
         (function($){
-            var $container = $('.portfolio-container ul');
-            $container.imagesLoaded(function(){
-                $container.masonry({
-                    itemSelector: '.portfolio-content',
-                    isFitWidth: false
-                });
-            });
-
-            var ctx = $('#myChart')
-
-            var myRadarChart = new Chart(ctx, {
-                type: 'radar',
-                data: {
-                    labels: ["デザイン", "オリジナリティ", "コンテンツ", "アクセサビリティ", "写真", "文章力", "ブランド"],
-                    datasets: [
-                        {
-                            //凡例
-                            label: "A社",
-                            //背景色
-                            backgroundColor: "rgba(187,211,230,0.2)",
-                            //枠線の色
-                            borderColor: "rgba(179,181,198,1)",
-                            //結合点の背景色
-                            pointBackgroundColor: "rgba(179,181,198,1)",
-                            //結合点の枠線の色
-                            pointBorderColor: "#fff",
-                            //結合点の背景色（ホバーしたとき）
-                            pointHoverBackgroundColor: "#fff",
-                            //結合点の枠線の色（ホバーしたとき）
-                            pointHoverBorderColor: "rgba(179,181,198,1)",
-                            //結合点より外でマウスホバーを認識する範囲（ピクセル単位）
-                            hitRadius: 5,
-                            //グラフのデータ
-                            data: [65, 59, 90, 81, 56, 55, 40]
-                        }
-                    ]
+            $('.portfolio-content').hover(
+                function(){
+                    $(this).find('.portfolio-content-img').css({
+                        filter: 'grayscale(0%)'
+                    })
+                },
+                function(){
+                    $(this).find('.portfolio-content-img').css({
+                        filter: 'grayscale(100%)'
+                    })
                 }
-            })
+            )
         })(jQuery)
     </script>
 </body>
