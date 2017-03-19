@@ -24,7 +24,7 @@
         var $animSelector = $('.main-message')
         var $contentSelector = $('.main-content')
         if (scroll >= $win.height()/10 && $win.height()/4 >= scroll ) {
-            $animSelector.fadeIn('slow')
+            $animSelector.not(':animated').fadeIn('slow')
             $animSelector.css({
                 position: 'fixed',
                 top: 'calc('+scroll+' + 50%)'
@@ -39,14 +39,14 @@
         }
 
         if (scroll >= $win.height()/4) {
-            $contentSelector.fadeIn('slow')
+            $contentSelector.not(':animated').fadeIn('slow')
             $contentSelector.css({
                 top: $win.height()/2
             })
             $('.anim-container').fadeOut('fast')
         } else {
             $contentSelector.fadeOut('fast')
-            $('.anim-container').fadeIn('fast')
+            $('.anim-container').not(':animated').fadeIn('fast')
         }
     })
 
