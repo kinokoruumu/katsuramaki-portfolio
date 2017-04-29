@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>PortFolio | makki</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -41,7 +42,7 @@
                         </div>
                         <div class="profile-detail">
                             <p class="profile-name">
-                                葛巻 大樹<span class="phoneme">Katsuramaki Taiki</span>
+                                葛巻 大樹<span class="phoneme"><br class="sp-only">Katsuramaki Taiki</span>
                             </p>
                             <div class="profile-introduction">
                                 <p class="profile-introduction-paragraph">
@@ -55,24 +56,45 @@
                             <div class="profile-part-time-job">
                                 <p class="profile-detail-title">バイト歴</p>
                                 <ul class="profile-detail-content">
-                                    <li>ユニロボット株式会社<span class="part-time-job-date">2016-04</span></li>
-                                    <li>ユニロボット株式会社<span class="part-time-job-date">2016-04</span></li>
-                                    <li>ユニロボット株式会社<span class="part-time-job-date">2016-04</span></li>
+                                    <li>すかいらーく<span class="part-time-job-date">2012-04</span></li>
+                                    <li>ユニロボット株式会社<span class="part-time-job-date">2015-10</span></li>
+                                    <li>Lebe.inc<span class="part-time-job-date">2016-10</span></li>
+                                </ul>
+                            </div>
+                            <div class="profile-part-time-job">
+                                <p class="profile-detail-title">受賞歴・資格</p>
+                                <ul class="profile-detail-content">
+                                    <li>シーケンス制御技能士３級<span class="part-time-job-date">2013-10</span></li>
+                                    <li>電子機器組み立て技能士３級+知事賞<span class="part-time-job-date">2014-04</span></li>
+                                    <li>応用情報技術者<span class="part-time-job-date">2016-04</span></li>
                                 </ul>
                             </div>
                             <div class="profile-skill">
                                 <p class="profile-detail-title">
                                     スキル
                                 </p>
-                                <div class="graph-container profile-detail-content">
-                                    <canvas id="myChart"></canvas>
+                                <div class="skill-logo-container">
+                                    <img src="images/logo/Python_logo_and_wordmark.svg.png" alt="">
+                                    <img src="images/logo/internetofthings-logo.jpg" alt="">
+                                    <img src="images/logo/raspberry-pi-logo.gif" alt="">
+                                    <img src="images/logo/arduino-logo.png" alt="">
+                                    <img src="images/logo/nodejs-image-processing.png" alt="">
+                                    <img src="images/logo/aws-logo.png" alt="">
+                                    <img src="images/logo/fusion-360-logo.png" alt="">
+                                    <img src="images/logo/linux-logo.jpg" alt="">
+                                    <img src="images/logo/laravel-logo-white.png" alt="">
                                 </div>
                                 
                             </div>
-                            <div class="profile-sns-account">
-                                <ul>
-                                    <li>Twitter</li>
-                                    <li>FaceBook</li>
+                            <div class="contact-as">
+                                <p class="profile-detail-title">
+                                    SNS
+                                </p>
+                                <ul class="sns-container">
+                                    <li><a href="https://twitter.com/makki0205" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100004670536389" class="facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i>Facebook</a></li>
+                                    <li><a href="https://github.com/makki0205" class="github"><i class="fa fa-github" aria-hidden="true"></i>GitHub</a></li>
+                                    <li><a href="https://www.wantedly.com/users/18173174" class="wantedly">Wantedly</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -80,56 +102,244 @@
                 </div>
                 <div class="portfolio-container">
                     <h2 class="portfolio-title content-title"><span>Portfolio</span><span class="phoneme">ポートフォリオ</span></h2>
-                    <ul>
+                    <ul class="portfolio-content-container">
                         <li class="portfolio-content">
                             <div class="portfolio-content-img">
-                                <img src="images/portfolio-content/web-radio-control1.jpeg" alt="">
+                                <img src="https://www.craftedbygc.com/wp-content/uploads/2014/12/forthglade-uai-720x540.jpg" alt="">
                             </div>
-                            <div class="portfolio-content-title hidden">
-                                次世代ラジコン
+                            <div class="portfolio-content-title-container hidden">
+                                <div class="portfolio-content-title">
+                                    <h3>Web Radio Controller</h3>
+                                    <h4>photo gallary, movie</h4>
+                                    <button class="show-detail-button">
+                                        Detail
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="hide-portfolio-content hidden">
+                                <div class="portfolio-content-detail-top">
+                                    <div class="portfolio-content-detail-main-view">
+                                        <img src="https://www.craftedbygc.com/wp-content/uploads/2014/12/forthglade-uai-720x540.jpg" alt="">
+                                    </div>
+                                    <div class="portfolio-content-detail-right">
+                                        <h3 class="portfolio-content-detail-title">
+                                            Web Radio Controller
+                                        </h3>
+                                        <p class="portfolio-content-detail-article">
+                                            webで操作するラジコンです<br>
+                                            webであることを感じさせないリアルタイム性を実現しました。
+                                        </p>
+                                        <div class="github-link">
+                                            <h4 class="github-link-title">
+                                                <i class="fa fa-github" aria-hidden="true"></i>GitHub link
+                                            </h4>
+                                            <a href="https://github.com/HALDevelopersTeam/HEW-raspberryPI">HEW-raspberryPI</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portfolio-content-detail-bottom">
+                                    <ul class="gallery-container">
+                                        <li>
+                                            <img src="https://www.craftedbygc.com/wp-content/uploads/2014/12/forthglade-uai-720x540.jpg" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="https://www.craftedbygc.com/wp-content/uploads/2016/07/japan_mockup-Resized-uai-720x540.jpg" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="https://www.craftedbygc.com/wp-content/uploads/2017/02/dribbble-uai-600x450.jpg" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="https://www.craftedbygc.com/wp-content/uploads/2014/12/forthglade-uai-720x540.jpg" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="https://www.craftedbygc.com/wp-content/uploads/2014/12/forthglade-uai-720x540.jpg" alt="">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="portfolio-content-detail-hide-button"><i class="fa fa-times" aria-hidden="true"></i></button>
                             </div>
                         </li>
                         <li class="portfolio-content">
                             <div class="portfolio-content-img">
-                                <img src="images/portfolio-content/web-radio-control2.jpeg" alt="">
+                                <img src="images/portfolio-content/next-generation-shooting-game1.jpg" alt="">
                             </div>
-                            <div class="portfolio-content-title hidden">
-                                次世代ラジコン
+                            <div class="portfolio-content-title-container hidden">
+                                <div class="portfolio-content-title">
+                                    <h3>Next Generation Shooting</h3>
+                                    <h4>photo gallary, movie</h4>
+                                    <button class="show-detail-button">
+                                        Detail
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="hide-portfolio-content hidden">
+                                <div class="portfolio-content-detail-top">
+                                    <div class="portfolio-content-detail-main-view">
+                                        <img src="images/portfolio-content/next-generation-shooting-game1.jpg" alt="">
+                                    </div>
+                                    <div class="portfolio-content-detail-right">
+                                        <h3 class="portfolio-content-detail-title">
+                                            Web Radio Controller
+                                        </h3>
+                                        <p class="portfolio-content-detail-article">
+                                            webで操作するラジコンです<br>
+                                            webであることを感じさせないリアルタイム性を実現しました。
+                                        </p>
+                                        <div class="github-link">
+                                            <h4 class="github-link-title">
+                                                <i class="fa fa-github" aria-hidden="true"></i>GitHub link
+                                            </h4>
+                                            <a href="https://github.com/HALDevelopersTeam/HEW-raspberryPI">HEW-raspberryPI</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portfolio-content-detail-bottom">
+                                    <ul class="gallery-container">
+                                        <li>
+                                            <img src="images/portfolio-content/next-generation-shooting-game1.jpg" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="https://www.craftedbygc.com/wp-content/uploads/2014/12/forthglade-uai-720x540.jpg" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="https://www.craftedbygc.com/wp-content/uploads/2014/12/forthglade-uai-720x540.jpg" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="https://www.craftedbygc.com/wp-content/uploads/2014/12/forthglade-uai-720x540.jpg" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="https://www.craftedbygc.com/wp-content/uploads/2016/07/japan_mockup-Resized-uai-720x540.jpg" alt="">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="portfolio-content-detail-hide-button"><i class="fa fa-times" aria-hidden="true"></i></button>
                             </div>
                         </li>
                         <li class="portfolio-content">
                             <div class="portfolio-content-img">
                                 <img src="images/portfolio-content/web-radio-control1.jpeg" alt="">
                             </div>
-                            <div class="portfolio-content-title hidden">
-                                次世代ラジコン
+                            <div class="portfolio-content-title-container hidden">
+                                <div class="portfolio-content-title">
+                                    <h3>Web Radio Controller</h3>
+                                    <h4>photo gallary, movie</h4>
+                                    <button class="show-detail-button">
+                                        Detail
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="hide-portfolio-content hidden">
+                                <div class="portfolio-content-detail-top">
+                                    <div class="portfolio-content-detail-main-view">
+                                        <!-- <video id="video" controls src="videos/portfolio-content/web-radio-control3.mp4"></video> -->
+                                        <img src="images/portfolio-content/web-radio-control1.jpeg" alt="">
+                                    </div>
+                                    <div class="portfolio-content-detail-right">
+                                        <h3 class="portfolio-content-detail-title">
+                                            Web Radio Controller
+                                        </h3>
+                                        <p class="portfolio-content-detail-article">
+                                            webで操作するラジコンです<br>
+                                            webであることを感じさせないリアルタイム性を実現しました。
+                                        </p>
+                                        <div class="github-link">
+                                            <h4 class="github-link-title">
+                                                <i class="fa fa-github" aria-hidden="true"></i>GitHub link
+                                            </h4>
+                                            <a href="https://github.com/HALDevelopersTeam/HEW-raspberryPI">HEW-raspberryPI</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portfolio-content-detail-bottom">
+                                    <ul class="gallery-container">
+                                        <li>
+                                            <img src="images/portfolio-content/web-radio-control1.jpeg" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="images/portfolio-content/web-radio-control2.jpeg" alt="">
+                                        </li>
+                                        <!-- <li>
+                                            <video id="video" src="videos/portfolio-content/web-radio-control3.mp4"></video>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                                <button class="portfolio-content-detail-hide-button"><i class="fa fa-times" aria-hidden="true"></i></button>
+                            </div>
+                        </li>
+                        <li class="portfolio-content">
+                            <div class="portfolio-content-img">
+                                <img src="images/portfolio-content/web-radio-control1.jpeg" alt="">
+                            </div>
+                            <div class="portfolio-content-title-container hidden">
+                                <div class="portfolio-content-title">
+                                    次世代ラジコン
+                                    <h4>photo gallary, movie</h4>
+                                    <button class="show-detail-button">
+                                        Detail
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="hide-portfolio-content hidden">
+                                <div class="portfolio-content-detail-top">
+                                    <div class="portfolio-content-detail-main-view">
+                                        <img src="images/portfolio-content/web-radio-control1.jpeg" alt="">
+                                    </div>
+                                    <div class="portfolio-content-detail-right">
+                                        <h3 class="portfolio-content-detail-title">
+                                            Web Radio Controller
+                                        </h3>
+                                        <p class="portfolio-content-detail-article">
+                                            webで操作するラジコンです<br>
+                                            webであることを感じさせないリアルタイム性を実現しました。
+                                        </p>
+                                        <div class="github-link">
+                                            <h4 class="github-link-title">
+                                                <i class="fa fa-github" aria-hidden="true"></i>GitHub link
+                                            </h4>
+                                            <a href="https://github.com/HALDevelopersTeam/HEW-raspberryPI">HEW-raspberryPI</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portfolio-content-detail-bottom">
+                                    
+                                </div>
+                                <button class="portfolio-content-detail-hide-button"><i class="fa fa-times" aria-hidden="true"></i></button>
                             </div>
                         </li>
                     </ul>
+
+                    <div class="hide-portfolio-content-anim-container-shadow hidden"></div>
+                    <div class="hide-portfolio-content-anim-container hidden">
+                        <div class="hide-portfolio-left-and-right">
+                            <div class="hide-portfolio-left-and-right-left"></div>
+                            <div class="hide-portfolio-left-and-right-right"></div>
+                        </div>
+                        <div class="hide-portfolio-up-and-down">
+                            <div class="hide-portfolio-up-and-down-top"></div>
+                            <div class="hide-portfolio-up-and-down-bottom"></div>
+                        </div>
+                    </div>
+
+                    <div class="footer">
+                        <p><small>Copyright &copy; 2017 Taiki Katsuramaki <br class="sp-only">All Rights Reserved.</small></p>
+                    </div>
                 </div>
+
+                
             </div>
+
         </div>
+
     </div>
 
+
+
     <script src="js/lib/jquery-1.9.1.min.js"></script>
+    <script src="js/lib/TweenMax.min.js"></script>
     <script src="js/animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <script src="js/chartSetting.js"></script>
     <script>
-        (function($){
-            $('.portfolio-content').hover(
-                function(){
-                    $(this).find('.portfolio-content-img').css({
-                        filter: 'grayscale(0%)'
-                    })
-                },
-                function(){
-                    $(this).find('.portfolio-content-img').css({
-                        filter: 'grayscale(100%)'
-                    })
-                }
-            )
-        })(jQuery)
+
     </script>
 </body>
 </html>
