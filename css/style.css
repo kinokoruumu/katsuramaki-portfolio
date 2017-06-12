@@ -511,14 +511,15 @@ html {
         height: 12vw;
     }
     .gallery-container li {
-        /*width: 20%;*/
+        width: 20%;
         height: 100%;
         list-style: none;
         cursor: pointer;
+        text-align: center;
     }
     .gallery-container li img {
         display: block;
-        width: 100%;
+        /*width: 100%;*/
         height: 100%;
     }
     .gallery-container li video {
